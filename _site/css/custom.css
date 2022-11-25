@@ -1,0 +1,252 @@
+@charset "UTF-8";
+.link__primary {
+  color: #ED26B7;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 52px;
+}
+
+h2 {
+  font-size: 21px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 991.98px) {
+  h1 {
+    font-size: 38px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+}
+header {
+  background: linear-gradient(180deg, rgba(215, 217, 231, 0) 26.29%, #D7D9E7 66.54%), linear-gradient(180deg, #D1D7E8 21.08%, rgba(209, 215, 232, 0) 100%), #DFE4E8;
+}
+
+.navbar {
+  padding: 24px 0;
+}
+
+.navbar-brand {
+  padding: 0;
+  margin: 0;
+}
+.navbar-brand img {
+  width: 182px;
+  height: 40px;
+}
+
+.navbar-toggler, .navbar-toggler:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+}
+.navbar-nav a {
+  justify-content: space-between;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.breadcrumb {
+  font-size: 14px;
+}
+.breadcrumb .resources {
+  color: #ED26B7;
+  text-decoration: none;
+  position: relative;
+  padding-left: 24px;
+  padding-right: 10px;
+}
+.breadcrumb .resources:before {
+  position: absolute;
+  content: "⟵";
+  left: 0;
+  top: -2px;
+}
+.breadcrumb .badge {
+  border: 1px solid #BFC9D1;
+  font-weight: 400;
+  font-size: 12px;
+  margin-left: 10px;
+  color: #1C0D3F;
+}
+
+.webinar__reg {
+  width: 390px;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  border: solid 1px #fff;
+  border-radius: 4px;
+}
+.webinar__reg h3 {
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+@media (max-width: 991.98px) {
+  .webinar__reg {
+    position: relative;
+    width: 100%;
+  }
+}
+
+.webinar__reg-thumb img {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+}
+
+.webinar__reg-form {
+  background: #F2F4F6;
+  padding: 24px;
+}
+@media (max-width: 991.98px) {
+  .webinar__reg-form .btn-primary {
+    width: 100%;
+  }
+}
+
+.form__default input {
+  border: solid 1px #BFC9D1;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 11px 15px;
+  height: 48px;
+  width: 100%;
+}
+.form__default input[type=checkbox] {
+  width: 24px;
+  height: 22px;
+  padding: 0;
+  top: 10px;
+  border: none;
+  background-color: #fff;
+  border-radius: 2px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  flex: 0 0 24px;
+  margin-right: 10px;
+}
+.form__default input[type=checkbox]:checked {
+  background: #ED26B7 url("data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==") 7px 5px no-repeat;
+}
+.form__default ::placeholder {
+  font-family: "GoodData Sans", Arial;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  opacity: 0.6;
+  line-height: 150%;
+}
+.form__default label {
+  font-size: 14px;
+}
+.form__default small {
+  font-size: 14px;
+  opacity: 0.5;
+  line-height: normal;
+  display: block;
+}
+.form__default small a {
+  opacity: 1;
+}
+
+.default-section {
+  padding: 90px 0;
+}
+
+.default-section__gray-bg {
+  background: #F2F4F6;
+}
+.default-section__gray-bg h2 {
+  font-size: 51px;
+  line-height: 62px;
+  font-weight: 400;
+  font-family: "Foundry Unie", Arial;
+}
+.default-section__gray-bg .text-lg {
+  font-size: 25px;
+  line-height: 40px;
+}
+@media (max-width: 991.98px) {
+  .default-section__gray-bg h2 {
+    font-size: 38px;
+  }
+  .default-section__gray-bg .text-lg {
+    font-size: 21px;
+  }
+}
+
+.btn {
+  border-radius: 70px;
+  border: none;
+  padding: 11px 28px 13px;
+  font-weight: 600;
+  font-size: 21px;
+}
+
+.btn-primary {
+  background: #ED26B7;
+  color: #fff;
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus-visible, :not(.btn-check) + .btn-primary:active {
+  background: #cf119b;
+  border: none;
+}
+
+.btn-sm {
+  font-size: 18px;
+  padding: 10px 18px;
+}
+
+.logos__partners {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.logos__partners > a {
+  display: flex;
+  align-items: center;
+}
+.logos__partners > a img {
+  opacity: 0.5;
+  max-height: 40px;
+  max-width: 100%;
+  padding: 0 20px;
+}
+
+.c-list-ticks__circle {
+  margin: 0;
+  padding: 0;
+}
+.c-list-ticks__circle li {
+  list-style: none;
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 20px;
+}
+.c-list-ticks__circle li:before {
+  position: absolute;
+  content: "";
+  border-radius: 100%;
+  background: #20CA8B;
+  width: 24px;
+  height: 24px;
+  top: 5px;
+  left: 0;
+}
+.c-list-ticks__circle li:after {
+  position: absolute;
+  content: url("data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==");
+  left: 7px;
+  top: 5px;
+  color: #fff;
+}

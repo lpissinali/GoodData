@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ title }}</title>
-    <meta name="description" content="Get the most out of GoodData with our resources - eBooks, analyst reports, success stories, tutorials, best practices, webinars.">
+    <meta name="description" content={{ excerpt }}>
     <meta property="og:image" content={{ metaOgImage }}>
-    <meta property="og:description" content="Get the most out of GoodData with our resources - eBooks, analyst reports, success stories, tutorials, best practices, webinars.">
-    <meta property="og:title" content="Resources">
+    <meta property="og:description" content={{ excerpt }}>
+    <meta property="og:title" content="{{ title }}">
     <meta property="og:url" content="https://www.gooddata.com/resources/">
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -18,65 +18,91 @@
             <div class="container d-flex justify-content-between">
                 <div class="navbar-brand">
                     <a href="/">
-                        <img src="images/gd-logo.svg" alt="GoodData" class="navbar-logo navbar-logo__default" width="182" height="40"/>
+                        <img src="images/gd-logo.svg" alt="GoodData" class="navbar-logo navbar-logo__default" />
                     </a>
                 </div>
-                <ul class="navbar-nav justify-content-center">
-                    <li class="nav-item nav-item__has-submenu"><a class="p-2 text-dark" href="#">Product</a></li>
-                    <li class="nav-item nav-item__has-submenu"><a class="p-2 text-dark" href="#">Solutions</a></li>
-                    <li class="nav-item nav-item__has-submenu"><a class="p-2 text-dark" href="#">Pricing</a></li>
-                    <li class="nav-item nav-item__has-submenu"><a class="p-2 text-dark" href="#">Resources</a></li>
-                    <li class="nav-item nav-item__has-submenu"><a class="p-2 text-dark" href="#">Company</a></li>
-                </ul>
-                <div class="c-login d-flex">
-                    <div class="nav-login-cta">
-                        <a href="/request-a-demo/" id="main-menu-request-a-demo" class="btn btn-flat c-btn-primary">Get a demo</a>
-                    </div>
+                <nav class="navbar-nav d-none d-lg-block">
+                    <a class="p-2 text-dark" href="#">Product</a>
+                    <a class="p-2 text-dark" href="#">Solutions</a>
+                    <a class="p-2 text-dark" href="#">Pricing</a>
+                    <a class="p-2 text-dark" href="#">Resources</a>
+                    <a class="p-2 text-dark" href="#">Company</a>
+                </nav>
+                <div class="d-none d-lg-block">
+                    <a href="/" class="btn btn-primary btn-sm">Get a demo</a>
                 </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteHeader" aria-controls="siteHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#siteHeader" aria-controls="siteHeader" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
         </nav>
-        <ul class="breadcrumb">
-           <li><a href="#" class="">Resources</a></li>
-           <li><a href="#"></a>tags</li>
-           <li><a href="#"></a>Daas</li>
-        </ul>
-        <section class="c-section__hero pt-0 pb-5 pb-md-0 c-section__bg-mist-gray c-search__wrap">
-            <h2>E-BOOK</h2>
-            <h1>{{ title }}</h1>
-
+        <section class="default-section pt-2">
+            <div class="container position-relative">
+                <div class="breadcrumb mt-2 mb-lg-5">
+                    <a href="#" class="resources">Resources</a> | &nbsp;
+                    <span>tags:</span>
+                    <span class="badge">Daas</span>
+                </div>
+                <div class="col-lg-7">
+                    <div class="webinar__reg-thumb d-lg-none w-100 mt-5 mb-5">
+                        <img src="images/embedded-analytics-in-your-software-product.png" alt=""/>
+                    </div>
+                    <h2>E-BOOK</h2>
+                    <h1>{{ title }}</h1>
+                </div>
+                <div class="webinar__reg form__default">
+                    <div class="webinar__reg-thumb d-none d-lg-block w-100">
+                        <img src="images/embedded-analytics-in-your-software-product.png" alt=""/>
+                    </div>
+                    <div class="webinar__reg-form">
+                        <h3>Webinar Registration</h3>
+                        <form>
+                            <input type="text" placeholder="First name"/>
+                            <input type="text" placeholder="Last name"/>
+                            <input type="email" placeholder="Business email address" />
+                            <label for="agree" class="d-flex"><input type="checkbox" name="agree" id="agree" /> I agree that GoodData may contact me regarding products & promotions.</label>
+                            <small class="mt-2 mb-3">We collect your personal information here to be able to identify and contact you. Learn more in our Privacy Policy or contact us at <a href="#" class="link__primary">privacy@gooddata.com.</a></small>
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </section>
     </header>
     <main>
-        {{ content | safe }}
-
-        <section class="c-section__default_condensed-mobile c-section__bg-mist-gray">
+        <section class="default-section mb-lg-3 mt-lg-3">
             <div class="container">
-                <div class="text-center">
-                    <h2 class="c-h2">Does GoodData look like the better&nbsp;fit?</h2>
-                    <p class="c-p__huge">Get a demo now and see for yourself. It’s commitment-free.</p>
-                    <div class="c-ctas-wrap c-ctas-wrap__in-row justify-content-center mt-5_5">
-                        <div class="c-cta d-inline-block">
-                            <a href="#" class="btn c-cta__link c-btn-primary" id="resource-detail-bumper-request-a-demo" data-bs-toggle="modal" data-bs-target="#modalDemo" role="button">Get a demo</a>
-                        </div>
+                <div class="row">
+                    <div class="col-lg-7">
+                        <h2>{{ bodyTitle }}</h2>
+                        {{ content | safe }}
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="c-section c-section__bg-mist-gray pb-5 pb-md-8">
+        <section class="default-section default-section__gray-bg">
             <div class="container">
-                <p class="c-p text-center mb-0">Trusted by</p>
-                <section id="sponsors"><div class="row c-logos__customers-generic one-line-mobile justify-content-center">
-                    <div class="col d-flex align-items-center justify-content-center"><a href="/" class="d-flex align-items-center justify-content-center"><img src="images/zalando-logo.svg" alt="Zalando" class="mw-100" loading="lazy" width="136" height="50"></a></div>
-                    <div class="col d-flex align-items-center justify-content-center"><a href="/" class="d-flex align-items-center justify-content-center"><img src="images/freshworks.svg" alt="Freshworks" class="mw-100" loading="lazy" width="151" height="50"></a></div>
-                    <div class="col d-flex align-items-center justify-content-center"><a href="/" class="d-flex align-items-center justify-content-center"><img src="images/visa-logo.svg" alt="Visa" class="mw-100" loading="lazy" width="73" height="50"></a></div>
-                    <div class="col d-flex align-items-center justify-content-center"><a href="/" class="d-flex align-items-center justify-content-center"><img src="images/doubleverify.svg" alt="Double Verify" class="mw-100" loading="lazy" width="170" height="50"></a></div>
-                    <div class="col d-flex align-items-center justify-content-center"><a href="/" class="d-flex align-items-center justify-content-center"><img src="images/calpine.svg" alt="Calpine" class="mw-100" loading="lazy" width="131" height="50"></a></div>
+                <div class="text-center">
+                    <h2>Does GoodData look like the better fit?</h2>
+                    <p class="text-lg mb-0">Get a demo now to get a guided tour + Q&A. It’s commitment-free.</p>
+                    <div class="d-inline-block mt-5">
+                        <a href="#" class="btn btn-primary" role="button">Get a demo</a>
+                    </div>
                 </div>
-                </section>
+            </div>
+        </section>
+
+        <section class="default-section default-section__gray-bg pt-0">
+            <div class="container">
+                <p class="text-center mb-2">Trusted by</p>
+                <div class="logos__partners">
+                    <a href="/"><img src="images/zalando-logo.svg" alt="Zalando"></a>
+                    <a href="/"><img src="images/freshworks.svg" alt="Freshworks"></a>
+                    <a href="/"><img src="images/visa-logo.svg" alt="Visa"></a>
+                    <a href="/" class="d-none d-lg-block"><img src="images/doubleverify.svg" alt="Double Verify"></a>
+                    <a href="/" class="d-none d-lg-block"><img src="images/calpine.svg" alt="Calpine"></a></div>
+                </div>
             </div>
         </section>
     </main>
